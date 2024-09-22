@@ -1,0 +1,12 @@
+
+
+::ng-deep .update-icon .pi-pencil {
+  color: #007bff !important;
+}
+
+
+::ng-deep .delete-icon .pi-trash {
+  color: #dc3545 !important;
+}
+
+

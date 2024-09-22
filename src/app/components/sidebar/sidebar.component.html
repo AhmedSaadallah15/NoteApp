@@ -1,0 +1,24 @@
+<div class="card flex justify-content-start ">
+  <p-sidebar [(visible)]="sidebarVisible">
+     <ul class=" text-primary  cursor-pointer">
+      <li class="list-none mb-3 font-semibold fadeinleft animation-duration-200 "  *ngIf="isLoggedIn">
+        <a routerLink="home" class="no-underline text-primary " >Notes </a>
+      </li>
+      <li class="list-none mb-3 font-semibold fadeinleft animation-duration-300 " *ngIf="!isLoggedIn">
+        <a routerLink="register" class="no-underline text-primary "   >Register </a>
+      </li>
+      <li class="list-none mb-3 font-semibold fadeinleft animation-duration-400 " *ngIf="!isLoggedIn">
+        <a routerLink="login" class="no-underline text-primary "  >Login </a>
+      </li>
+      <li class="list-none mb-3 font-semibold fadeinleft animation-duration-500  " *ngIf="isLoggedIn">
+        <a (click)="logOut()">Logout</a>
+      </li>
+      <li class="list-none mb-3 font-semibold fadeinleft animation-duration-500  " *ngIf="isLoggedIn">
+      </li>
+     </ul>
+     <img src="assets/images/Notebook-rafiki.png" alt="" class="w-full pt-6 fadein animation-duration-1000" >
+  </p-sidebar>
+  <p-button (onClick)="sidebarVisible = true" icon="pi pi-arrow-right" />
+
+
+</div>

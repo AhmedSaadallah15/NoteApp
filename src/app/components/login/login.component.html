@@ -1,0 +1,56 @@
+
+
+
+
+
+<div class="grid align-items-center justify-content-center">
+  <div class="lg:col-6 sm:col-12 ">
+    <div class="lg:w-11  fadein animation-duration-1000">
+      <img src="assets/images/Notes-amico.png" alt="" class="w-full">
+    </div>
+  </div>
+  <div class="lg:col-6 sm:col-12 ">
+    <div class="flex justify-content-center align-items-center ">
+      <div class="lg:w-9 sm:w-12 md:w-9 fadein animation-duration-1000">
+        <h1 class="text-4xl text-primary" > <span><i class="pi pi-pen-to-square pr-1"></i></span>Login Now</h1>
+        <p *ngIf="errorMassage" class="text-red-500"><span> <i class="pi pi-exclamation-circle"></i></span> {{errorMassage}}</p>
+
+       <form (ngSubmit)="submitForm(loginForm)" [formGroup]="loginForm">
+         <div class="flex flex-column gap-2 mb-2">
+           <label for="email">Email</label>
+           <input pInputText id="email" aria-describedby="email-help" type="email" formControlName="email"/>
+           <div>
+            <p *ngIf="loginForm.get('email')?.getError('required') && loginForm.get('email')?.touched" class="text-red-500"><span> <i class="pi pi-exclamation-circle"></i></span> Email is required</p>
+            <p *ngIf="loginForm.get('email')?.getError('email') && loginForm.get('email')?.touched" class="text-red-500"> <span> <i class="pi pi-exclamation-circle"></i></span> Invalid email format </p>
+          </div>
+       </div>
+
+       <div class="flex flex-column gap-2 mb-2">
+        <label for="Password">Password</label>
+        <input pInputText id="Password" aria-describedby="Password-help" type="password" formControlName="password" />
+        <div>
+          <p *ngIf="loginForm.get('password')?.getError('password') && loginForm.get('password')?.touched" class="text-red-500"><span> <i class="pi pi-exclamation-circle"></i></span> Password must contain at least one digit and one special character. </p>
+          <p *ngIf="loginForm.get('password')?.getError('required') && loginForm.get('password')?.touched" class="text-red-500"><span> <i class="pi pi-exclamation-circle"></i></span> Password is required</p>
+        </div>
+    </div>
+
+     <p-button label="Login" type="submit" styleClass="ml-auto block mt-3 w-full sm:w-auto "></p-button>
+       </form>
+      </div>
+     </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
